@@ -1,0 +1,202 @@
+body{
+	height: 100%;
+	width: 100%;
+	background-color: gray;
+	display: flex;
+	margin: 0;
+	overflow: hidden;
+}
+
+@font-face {
+  font-family: fffForward;
+  src: url(./fonts/fffforwa.ttf);
+}
+
+.gameplaypage{
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	display: flex;
+	background-attachment: fixed;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	margin: auto auto;
+}
+
+
+.restartbutton{
+	width: auto;
+	margin: 0 auto;
+	font-family: fffForward;
+    font-size: 50px;
+	color: white;
+	z-index: 0;
+	padding-top: 12px;
+	padding-left: 0px;
+	display: inline-block;
+	text-align: center;
+    top: 300px;
+    text-decoration: none;
+}
+
+.restartbutton:active{
+	color: red;
+	transition: color .2s;
+}
+
+.timer{
+	width: auto;
+	font-family: fffForward;
+	font-size: 50px;
+	color: white;
+	position: absolute;
+	left: 5%;
+	top: 10%;
+	z-index: 0;
+	padding-top: 12px;
+	padding-left: 0px;
+	display: inline-block;
+	text-align: center;
+}
+
+.level{
+	width: auto;
+	font-family: fffForward;
+	font-size: 50px;
+	color: white;
+	position: absolute;
+	left: 5%;
+	bottom: 10%;
+	z-index: 0;
+	padding-top: 12px;
+	padding-left: 0px;
+	display: inline-block;
+	text-align: center;
+}
+
+.gameboard{
+	height: 400px;
+	width: 400px;
+	background-color: black;
+	top: 85px;
+	position: absolute;
+	z-index: -3;
+	animation: gameboardspin 15s linear 0s infinite;
+}
+
+.gameover{
+    position: absolute;
+    display: flex;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	opacity: 0;
+	font-size: 70px;
+	text-align: center;
+	background-color: red;
+	transition: opacity 1s;
+	z-index: 0;
+    font-family: fffForward;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.youwin{
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	opacity: 0;
+	font-size: 70px;
+	text-align: center;
+	background-color: green;
+	transition: opacity 1s;
+	z-index: 0;
+	font-family: fffForward;
+}
+
+.character{
+	height: 23px;
+	width: 23px;
+	top: 0;
+	left: 0;
+	background-color: red;
+	margin-top: 2px;
+	margin-left: 2px;
+	display: inline-block;
+	position: absolute;
+	transition: top .5s, left .5s;
+	z-index: -1;
+}
+
+.square{
+	height: 25px;
+	width: 25px;
+	border: 3px solid gray;
+	background-color: black;
+	display: inline-block;
+	position: absolute;
+	z-index: -2;
+}
+
+.visited{
+	background-color: gray;
+}
+
+.charactervisited{
+	background-color: maroon;
+}
+.exit{
+	height: 23px;
+	width: 23px;
+	top: 0;
+	left: 0;
+	background-color: red;
+	margin-top: 2px;
+	margin-left: 2px;
+	display: inline-block;
+	position: absolute;
+	transition: top .5s, left .5s;
+	z-index: -1;
+}
+.top{
+	border-top-color: white;
+}
+.left{border-left-color: white;
+}
+.bottom{border-bottom-color: white;
+}
+.right{border-right-color: white;
+}
+
+@media (max-width:700px)  { 
+	.title{
+		font-size: 75px;
+		top: 50px;
+		letter-spacing: 0px;
+	}
+	.startbutton{
+		font-size: 25px;
+		top: 200px;
+	}
+}
+@keyframes gameboardspin {
+  0%   {transform: rotate(0deg);}
+  100% {transform: rotate(360deg);}
+}
+
+@keyframes titleflash {
+  0%   {color: white;}
+  100% {color: red;}
+}
+
+@keyframes titlearrive {
+  0%   {transform: scale(1, 0);}
+  100% {transform: scale(1, 1);}
+}
